@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-plane-departure"></i> Flight Tracker</h1>
+            <p>Track your flight status in real-time</p>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="flightInput" placeholder="Enter Flight Number (e.g., AA123)" autocomplete="off">
+                </div>
+                <button id="searchBtn">Track Flight</button>
+            </div>
+
+            <div id="resultsContainer" class="results-container hidden">
+                <!-- Results will be injected here -->
+            </div>
+            
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Searching for flight...</p>
+            </div>
+            
+             <div id="errorContainer" class="error-container hidden">
+                <i class="fas fa-exclamation-circle"></i>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Flight Tracker Inc.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
